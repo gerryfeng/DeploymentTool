@@ -1,0 +1,1283 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Web</name>
+    </assembly>
+    <members>
+        <member name="M:Web.Controllers.HolidayController.GetMinInitDate">
+            <summary>
+            获取最小日期
+            </summary>
+            <returns>日期详情</returns>
+        </member>
+        <member name="M:Web.Controllers.HolidayController.GetMaxInitDate">
+            <summary>
+            获取最大日期
+            </summary>
+            <returns>日期详情</returns>
+        </member>
+        <member name="M:Web.Controllers.HolidayController.UpdateDays(System.DateTime,System.Int32,Web.DayModule.DayType)">
+            <summary>
+            修改指定日期区间的节假日类型
+            </summary>
+            <param name="beginDate">开始日期</param>
+            <param name="count">持续天数</param>
+            <param name="dayType">节假日类型：0工作日 1周末 2元旦 3春节 4清明节 5端午节 6中秋节 7国庆节 8调休</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.HolidayController.GetDays(System.DateTime,System.Int32,Web.DayModule.DayService.QueryDayType)">
+            <summary>
+            获取指定日期详情
+            </summary>
+            <remarks>
+            示例请求：
+            
+                Get /Days
+                {
+                    "beginDate": "2020-2-4",
+                    "count": 7
+                }
+                
+            </remarks>
+            <param name="beginDate">开始日期</param>
+            <param name="count">持续天数</param>
+            <param name="queryDayType">All(返回所有), Holiday(节假日), WorkDay(工作日)</param>
+            <returns>日期详情</returns>
+        </member>
+        <member name="T:Web.Controllers.Configure.FileController">
+            <summary>
+             mongoDB 文件接口
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Configure.FileController.GetModelPreviewFile(System.String)">
+            <summary>
+            模型文件预览
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="type">类型</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.FileController.DownLoadFile(System.String,System.String,System.String)">
+            <summary>
+            模型下载
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="type">类型</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.FileController.SketchBlobFile(System.String,System.String,System.String)">
+            <summary>
+            画板图片
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="siteCode"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.FileController.SketchBlobContent(System.String,System.String,System.String)">
+            <summary>
+            获取画板Json
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="siteCode">站点编号</param>
+            <param name="fileName">画板名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.Configure.ModelsController">
+            <summary>
+            模型管理
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.GetModelList(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取模型列表
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="name">模型名称</param>
+            <param name="type">类型</param>
+            <param name="pageIndex">起始页</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.SaveUploadFiles(Web.DTO.ModelUpload)">
+            <summary>
+            保存模型文件
+            </summary>
+            <param name="modelUpload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.BatchImportUploadFiles(System.String,System.String,System.Collections.Generic.List{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            批量上传模型文件
+            </summary>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.DeleteByModel(System.String)">
+            <summary>
+            删除模型文件
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.ModelManageList(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            运维模型管理
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="name"></param>
+            <param name="type"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.DataMove">
+            <summary>
+            mongo库迁移到sqlServer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.Export(System.String,System.String)">
+            <summary>
+            批量导出模型文件
+            </summary>
+            <param name="Ids">模型Id</param>
+            <param name="dimonsion">维度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelsController.Import(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            批量导入模型文件
+            </summary>
+            <param name="file">画板zip</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.Configure.ModelTypeController">
+            <summary>
+            运维模型类型管理
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelTypeController.GetTypeList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取运维模型类型管理列表
+            </summary>
+            <param name="pageSize">条数</param>
+            <param name="pageIndex">当前页</param>
+            <param name="name">类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelTypeController.GetModelType(System.String)">
+            <summary>
+             获取模型类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.ModelTypeController.Save(System.String,System.String)">
+            <summary>
+            保存模型类型
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.Configure.SketchpadController">
+            <summary>
+            web组态api
+            </summary>
+        </member>
+        <member name="F:Web.Controllers.Configure.SketchpadController.sketchpadService">
+            <summary>
+             注册servers
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.GetSketchpad(System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            获取画板列表接口
+            </summary>
+            <param name="pageIndex">起始页</param>
+            <param name="pageSize">每页条数</param>
+            <param name="siteCode">站点编号</param>
+            <param name="isTemplate">是否模板</param>
+            <param name="name">画板名称</param>
+            <param name="dimension">维度</param>
+            <param name="queryInfo">模糊查询条件</param>
+            <param name="typeID">类型ID</param>
+            <param name="siteInfo">站点信息</param>
+            <param name="version">版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.GetPointDetails">
+            <summary>
+            获取画板点表服务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.SaveSketchPad(Web.DTO.SketchPadSaveDTO)">
+            <summary>
+            保存画板
+            </summary>
+            <param name="sketchPad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.SketchpadByDeviceTypeName">
+            <summary>
+            获取设备类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.DeleteByID(System.String)">
+            <summary>
+            删除画板
+            </summary>
+            <param name="ID">画板ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.Export(System.String)">
+            <summary>
+            批量导出画板
+            </summary>
+            <param name="Ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.Import(Web.DTO.Configure.ImportZip)">
+            <summary>
+            批量导入画板文件
+            </summary>
+            <param name="importZip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.CaseTemplate(System.String)">
+            <summary>
+            画板案例转换模板
+            </summary>
+            <param name="Id">画板ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.Edit(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            运维画板编辑
+            </summary>
+            <param name="Id">画板Id</param>
+            <param name="Name">画板名称</param>
+            <param name="ThreeName">关联三维模型</param>
+            <param name="panoramicModel">全景模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.Configure.SketchpadController.DataMove">
+            <summary>
+            历史画板mongo库迁移到sqlServer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.IOTPlatform.Configure.SketchPadTypeController">
+            <summary>
+            画板类型管理
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.SketchPadTypeController.GetTypeList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取运维模型类型管理列表
+            </summary>
+            <param name="pageSize">条数</param>
+            <param name="pageIndex">当前页</param>
+            <param name="name">类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.SketchPadTypeController.Save(Web.Models.Configure.Entity.SketchPadType)">
+            <summary>
+            保存画板类型
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Controllers.IOTPlatform.Configure.ThreeUnitController">
+            <summary>
+            三维组态相关接口
+            </summary>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.GetModelTypeList(System.String)">
+            <summary>
+            根据类型返回三维特征
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.GetFeatureDataByTypeAndFeature(System.String,System.String)">
+            <summary>
+            根据类型特征返回数据
+            </summary>
+            <param name="type"></param>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.GetModelByDefault">
+            <summary>
+            获取默认三维模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.AddThreeSketch(Web.Models.ThreeConfigure.ThreeSketch)">
+            <summary>
+            新增三维场景
+            </summary>
+            <param name="sketchInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.EditThreeSketch(Web.Models.ThreeConfigure.ThreeSketch)">
+            <summary>
+            编辑三维场景
+            </summary>
+            <param name="sketchInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryThreeSketch">
+            <summary>
+            查询所有的三维场景
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryThreeSketchById(System.Int32)">
+            <summary>
+            根据id获取三维场景信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.DeleteThreeSketch(System.String)">
+            <summary>
+            根据id删除三维场景信息
+            </summary>
+            <param name="ids">待删除的id列表 eg:1,2,3</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.AddThreeModelGroup(Web.Models.ThreeConfigure.ThreeModelGroup)">
+            <summary>
+            添加三维模型分组信息
+            </summary>
+            <param name="modelGroup"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryAllThreeModelGroup">
+            <summary>
+            查询所有的模型类型信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryThreeModelGroupById(System.Int32)">
+            <summary>
+            根据id获取模型类型信息
+            </summary>
+            <param name="id">eg:1</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.DeleteModelGroup(System.String)">
+            <summary>
+            根据id删除模型类型信息
+            </summary>
+            <param name="ids">待删除的id列表 eg:1,2,3</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.AddThreeModel(Web.Models.ThreeConfigure.ThreeModel)">
+            <summary>
+            新增模型
+            </summary>
+            <param name="threeModel">待删除的id列表 eg:1,2,3</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.DeleteThreeModel(System.String)">
+            <summary>
+            根据id删除模型信息
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryAllThreeModel">
+            <summary>
+            查询所有模型信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.QueryThreeModelByGroup(System.Int64)">
+            <summary>
+            根据分组类型id查询所属模型
+            </summary>
+            <param name="groupID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.Configure.ThreeUnitController.ExportModel(System.Int64)">
+            <summary>
+            根据id导出模型
+            </summary>
+            <param name="id"> 模型id eg:id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.IOTTools.HistoryConvertController.HistoryInfoMation(System.String,System.String)">
+            <summary>
+            物联工具历史数据历史表信息服务
+            </summary>
+            <param name="ConnectionStr">数据库连接字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Controllers.IOTPlatform.IOTTools.HistoryConvertController.GetDataCover(System.String)">
+            <summary>
+            历史数据转换进度
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.DTO.BatchImportDTO">
+            <summary>
+            批量导入Dto
+            </summary>
+        </member>
+        <member name="P:Web.DTO.BatchImportDTO.Dimonsion">
+            <summary>
+            维度
+            </summary>
+        </member>
+        <member name="P:Web.DTO.BatchImportDTO.files">
+            <summary>
+            文件集合
+            </summary>
+        </member>
+        <member name="T:Web.DTO.ModelUpload">
+            <summary>
+            模型文件上传
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.Name">
+            <summary>
+            模型名称
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.Type">
+            <summary>
+            模型类型
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.Dimension">
+            <summary>
+            维度
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.RelModel">
+            <summary>
+            关联模型
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.Size">
+            <summary>
+            模型长宽高
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.Attr">
+            <summary>
+            模型属性
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.ModelFile">
+            <summary>
+            模型文件
+            </summary>
+        </member>
+        <member name="P:Web.DTO.ModelUpload.File">
+            <summary>
+            材质文件
+            </summary>
+        </member>
+        <member name="P:Web.DTO.Status.info">
+            <summary>
+            其他信息
+            </summary>
+        </member>
+        <member name="P:Web.DTO.Status.statusCode">
+            <summary>
+            状态码 成功 - 0000
+            错误 自定义
+            </summary>
+        </member>
+        <member name="P:Web.DTO.Status.errMsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.Name">
+            <summary>
+            画板名称
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.Dimonsion">
+            <summary>
+            维度
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.isTemplate">
+            <summary>
+            是否模板
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.data">
+            <summary>
+            Svg字符串
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.ThreeDimonsionName">
+            <summary>
+            关联三维模型名称
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.pointVersion">
+            <summary>
+            点表版本
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.jsonStr">
+            <summary>
+            json字符串
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.siteCode">
+            <summary>
+            站点编码
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.siteInfo">
+            <summary>
+            站点信息
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.TypeID">
+            <summary>
+            类型ID
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.ProjectName">
+            <summary>
+            项目简称
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.Templet">
+            <summary>
+            是否样板
+            </summary>
+        </member>
+        <member name="P:Web.DTO.SketchPadSaveDTO.Version">
+            <summary>
+            版本
+            </summary>
+        </member>
+        <member name="P:Web.DTO.IOTTools.DataCoverResult.TotalNum">
+            <summary>
+            总次数
+            </summary>
+        </member>
+        <member name="P:Web.DTO.IOTTools.DataCoverResult.CurrentNum">
+            <summary>
+            当前执行次数
+            </summary>
+        </member>
+        <member name="P:Web.DTO.IOTTools.DataCoverResult.Time">
+            <summary>
+            当前任务执行时间
+            </summary>
+        </member>
+        <member name="P:Web.DTO.IOTTools.DataCoverResult.percentage">
+            <summary>
+            百分比
+            </summary>
+        </member>
+        <member name="M:Web.Repository.IMongoRepository.DownloadAsBytesByName(System.String)">
+            <summary>
+            获取文件内容
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IMongoRepository.UploadFile(System.String,System.IO.Stream)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IMongoRepository.DownloadFileStreamSeekable(System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IMongoRepository.DeleteFile(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.Add(`0)">
+            <summary>
+            添加实体(单个)
+            </summary>
+            <param name="entity">实体对象</param>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.AddRange(System.Collections.Generic.List{`0})">
+            <summary>
+            批量插入实体(多个)
+            </summary>
+            <param name="list">实体列表</param>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.Remove(`0)">
+            <summary>
+            删除实体(单个)
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.RemoveRange(System.Collections.Generic.List{`0})">
+            <summary>
+            批量删除实体(多个)
+            </summary>
+            <param name="list">实体列表</param>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.GetAll">
+            <summary>
+            获取所有 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.GetModelById(System.Object)">
+            <summary>
+            获取实体（主键）
+            </summary>
+            <param name="id">主键id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.GetModel(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取实体（条件）
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            查询记录数
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns>记录数</returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.Exist(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="anyLambda">查询表达式</param>
+            <returns>布尔值</returns>
+        </member>
+        <member name="M:Web.Repository.IRepository`1.GetModelsByPage``1(System.Int32,System.Int32,System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+             分页查询
+            </summary>
+            <typeparam name="type"></typeparam>
+            <param name="pageSize">每页条数</param>
+            <param name="pageIndex">当前页</param>
+            <param name="isAsc">是否升序</param>
+            <param name="orderByLambda">排序字段</param>
+            <param name="whereLambda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.MongoRepository.DownloadAsBytesByName(System.String)">
+            <summary>
+            根据文件名称获取文件内容
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.#ctor(Web.Repository.BaseDBContext)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbContext"></param>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.Add(`0)">
+            <summary>
+            添加实体(单个)
+            </summary>
+            <param name="entity">实体对象</param>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.AddRange(System.Collections.Generic.List{`0})">
+            <summary>
+            批量插入实体(多个)
+            </summary>
+            <param name="list">实体列表</param>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.Remove(`0)">
+            <summary>
+            删除实体(单个)
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.RemoveRange(System.Collections.Generic.List{`0})">
+            <summary>
+            批量删除实体(多个)
+            </summary>
+            <param name="list">实体列表</param>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.GetAll">
+            <summary>
+            获取所有
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.GetModelById(System.Object)">
+            <summary>
+            获取实体
+            </summary>
+            <param name="id">主键id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.GetModel(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取实体（条件）
+            </summary>
+            <param name="predicate">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.Count(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            查询记录数
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.Exist(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            是否存在
+            </summary>
+            <param name="anyLambda"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Repository.Configure.Repository`1.GetModelsByPage``1(System.Int32,System.Int32,System.Boolean,System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            分页查询
+            </summary>
+            <typeparam name="type"></typeparam>
+            <param name="pageSize"></param>
+            <param name="pageIndex"></param>
+            <param name="isAsc">是否排序</param>
+            <param name="orderByLambda"></param>
+            <param name="whereLambda"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Models.DayItemDto">
+            <summary>
+            日期 DTO
+            </summary>
+        </member>
+        <member name="P:Web.Models.Configure.Entity.DeviceType.FTypeName">
+            <summary>
+             FTypeName
+            </summary>
+        </member>
+        <member name="P:Web.Models.Configure.Entity.DeviceType.GroupName">
+            <summary>
+             Dimonsion
+            </summary>
+        </member>
+        <member name="P:Web.Models.Configure.Entity.Model.TypeName">
+            <summary>
+             Type
+            </summary>
+        </member>
+        <member name="P:Web.Models.Configure.Entity.Model.Dimonsion">
+            <summary>
+             Dimonsion
+            </summary>
+        </member>
+        <member name="M:Web.Utils.IOTTools.Utilties.GenerateStatisticCycleCommand(System.DateTime,System.DateTime)">
+            <summary>
+            生成临时表存放时间周期的历史数据
+            </summary>
+            <param name="cycleBegin">开始时间(最新时间)</param>
+            <param name="cycleEnd">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Utils.FileUtils.SvgToPicture(System.String,System.String)">
+            <summary>
+             SVG 转 图片
+            </summary>
+            <param name="pngPath">图片保存路径</param>
+            <param name="SvgStr">Svg文本</param>
+            <returns>生成图片路径</returns>
+        </member>
+        <member name="M:Web.Utils.FileUtils.SaveImage(System.String)">
+            <summary>
+            将图片以二进制流
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Utils.FileUtils.DeleteFolder(System.String)">
+            <summary>
+            删除文件目录
+            </summary>
+            <param name="dir"></param>
+        </member>
+        <member name="M:Web.Utils.FileUtils.downloadFile(System.String,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            下载本地文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Utils.PageQuerySql.GetPagedQuerySql(System.String,System.String,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            分页查询
+            </summary>
+            <param name="sql">sql语句</param>
+            <param name="orderField">分页字段</param>
+            <param name="startNum">起始页</param>
+            <param name="endNum">条数</param>
+            <param name="isDesc">升序</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Utils.Configure.ZipClass.ZipFile(System.String,System.String)">
+            <summary>
+             压缩文件夹
+            </summary>
+            <param name="strFile">文件目录</param>
+            <param name="strZip">压缩包名</param>
+        </member>
+        <member name="M:Web.Utils.Configure.ZipClass.unZipFile(System.String,System.String)">
+            <summary>
+            解压
+            </summary>
+            <param name="TargetFile">压缩包路径</param>
+            <param name="fileDir">解压目录</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.Profiles.Configure.SketchPadProfile">
+            <summary>
+            画板bolb 转字符串
+            </summary>
+        </member>
+        <member name="M:Web.DayModule.DayService.GetMinInitDate">
+            <summary>
+            获取数据库节假日表最小日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.DayModule.DayService.GetMaxInitDate">
+            <summary>
+            获取数据库节假日表最大日期
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.DayModule.DayService.UpdateDays(System.DateTime,Web.DayModule.DayType,System.Int32)">
+            <summary>
+            设置节假日
+            </summary>
+            <param name="beginDate"></param>
+            <param name="dayType"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.DayModule.DayService.GetHolidayItems(System.DateTime,System.Int32,Web.DayModule.DayService.QueryDayType)">
+            <summary>
+            返回指定时间段内的相关信息
+            </summary>
+            <param name="beginDate">开始时间</param>
+            <param name="count">持续天数</param>
+            <param name="dayType">All(返回所有), Holiday(节假日), WorkDay(工作日)</param>
+            <returns></returns>
+        </member>
+        <member name="T:Web.DayModule.DayType">
+            <summary>
+            节假日枚举类型
+            </summary>
+        </member>
+        <member name="T:Web.EnumExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Web.Services.Configure.FileService.GetModelAsBytes(System.String,System.String,System.String)">
+            <summary>
+            获取模型文件内容
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="type"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.FileService.GetSketchAsBytes(System.String,System.String,System.String)">
+            <summary>
+             获取画板图片
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="siteCode"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.FileService.GetSketchAsContent(System.String,System.String,System.String)">
+            <summary>
+            获取画板json
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="siteCode"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IFileService.GetModelAsBytes(System.String,System.String,System.String)">
+            <summary>
+            模型文件预览下载
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="type">类型</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IFileService.GetSketchAsBytes(System.String,System.String,System.String)">
+            <summary>
+            获取画板图片
+            </summary>
+            <param name="dimonsion">维度</param>
+            <param name="siteCode">站点编号</param>
+            <param name="fileName">文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IFileService.GetSketchAsContent(System.String,System.String,System.String)">
+            <summary>
+            获取画板内容
+            </summary>
+            <param name="dimonsion"></param>
+            <param name="siteCode"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IModelService.GetModelList(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取模型文件
+            </summary>
+            <param name="dimension">维度</param>
+            <param name="type">类型</param>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IModelService.SaveModel(Web.DTO.ModelUpload)">
+            <summary>
+            保存模型文件
+            </summary>
+            <param name="modelUpload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IModelService.Export(System.String,System.String)">
+            <summary>
+            批量导出模型文件
+            </summary>
+            <param name="Ids">模型文件ID</param>
+            <param name="dimonsion">维度</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.IModelService.Import(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            批量导入模型文件
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.IModelTypeService.GetTypeList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取模型类型管理列表
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.IModelTypeService.GetList(Web.Models.Configure.Entity.ModelType)">
+            <summary>
+            获取模型文件类型信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.IModelTypeService.SaveModelType(System.String,System.String)">
+            <summary>
+            保存模型类型
+            </summary>
+            <param name="modelType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.GetSketchpadList(System.Int32,System.Int32,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.String)">
+            <summary>
+            获取画板列表接口
+            </summary>
+            <param name="pageIndex">起始页</param>
+            <param name="pageSize">每页条数</param>
+            <param name="siteCode">站点编号</param>
+            <param name="isTemplate">是否模板</param>
+            <param name="name">画板名称</param>
+            <param name="dimension">维度</param>
+            <param name="queryInfo">模糊查询条件</param>
+            <param name="siteInfo">站点信息</param>
+            <param name="typeID">类型ID</param>
+            <param name="version">版本</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.GetPointDetails">
+            <summary>
+            获取点表明细
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.SaveSketchPad(Web.DTO.SketchPadSaveDTO)">
+            <summary>
+            保存画板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.SketchpadByDeviceTypeName">
+            <summary>
+            获取设备类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.DeleteByID(System.String)">
+            <summary>
+            删除画板
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.Export(System.String)">
+            <summary>
+            批量导出画板
+            </summary>
+            <param name="Ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.Import(Web.DTO.Configure.ImportZip)">
+            <summary>
+            批量导入画板
+            </summary>
+            <param name="zip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.CaseTemplate(System.String)">
+            <summary>
+            画板案例转模板
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.Edit(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            运维画板编辑
+            </summary>
+            <param name="Id">画板Id</param>
+            <param name="Name">画板名称</param>
+            <param name="ThreeName">关联三维模型名称</param>
+            <param name="panoramicModel">全景模型</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ISketchpadService.DataMove">
+            <summary>
+            历史画板mongo库迁移到sqlServer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ModelTypeService.GetTypeList(System.Int32,System.Int32,System.String)">
+            <summary>
+             获取
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.ModelTypeService.GetList(Web.Models.Configure.Entity.ModelType)">
+            <summary>
+            获取所有模型类型
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.SketchpadService.SaveSketchPad(Web.DTO.SketchPadSaveDTO)">
+            <summary>
+            保存画板
+            </summary>
+            <param name="sketchPadDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.SketchpadService.Export(System.String)">
+            <summary>
+            导出模型文件
+            </summary>
+            <param name="Ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.Services.SketchpadService.ReadDirectoryToZipStreamAsync(System.IO.DirectoryInfo,System.IO.Stream)">
+            <summary>
+            将一个文件夹的内容读取为 Stream 的压缩包
+            </summary>
+            <param name="directory"></param>
+            <param name="stream"></param>
+        </member>
+        <member name="M:Web.Services.Configure.Services.SketchpadService.CaseTemplate(System.String)">
+            <summary>
+            运维画板转模板
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.ModelService.GetModelList(System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取模型列表
+            </summary>
+            <param name="dimension">维度</param>
+            <param name="type">类型</param>
+            <param name="name">模型名称</param>
+            <param name="pageIndex">起始页</param>
+            <param name="pageSize">每页条数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.ModelService.SaveModel(Web.DTO.ModelUpload)">
+            <summary>
+            保存模型文件
+            </summary>
+            <param name="modelUpload"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.ModelService.BatchSaveModel(System.String,System.String,System.Collections.Generic.ICollection{Microsoft.AspNetCore.Http.IFormFile})">
+            <summary>
+            批量保存模型文件
+            </summary>
+            <param name="batchImport"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.ModelService.DeleteByModel(System.String)">
+            <summary>
+            删除模型
+            </summary>
+            <param name="Ids">模型ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            组合And
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            组合Or
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.Compose``1(System.Linq.Expressions.Expression{``0},System.Linq.Expressions.Expression{``0},System.Func{System.Linq.Expressions.Expression,System.Linq.Expressions.Expression,System.Linq.Expressions.Expression})">
+            <summary>
+            Combines the first expression with the second using the specified merge function.
+            </summary>
+        </member>
+        <member name="T:Web.Services.Configure.LinqExtensions.ParameterRebinder">
+            <summary>
+            ParameterRebinder
+            </summary>
+        </member>
+        <member name="F:Web.Services.Configure.LinqExtensions.ParameterRebinder.map">
+            <summary>
+            The ParameterExpression map
+            </summary>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.ParameterRebinder.#ctor(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Web.Services.Configure.LinqExtensions.ParameterRebinder"/> class.
+            </summary>
+            <param name="map">The map.</param>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.ParameterRebinder.ReplaceParameters(System.Collections.Generic.Dictionary{System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression},System.Linq.Expressions.Expression)">
+            <summary>
+            Replaces the parameters.
+            </summary>
+            <param name="map">The map.</param>
+            <param name="exp">The exp.</param>
+            <returns>Expression</returns>
+        </member>
+        <member name="M:Web.Services.Configure.LinqExtensions.ParameterRebinder.VisitParameter(System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Visits the parameter.
+            </summary>
+            <param name="p">The p.</param>
+            <returns>Expression</returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.Configure.ISketchPadTypeService.GetTypeList(System.Int32,System.Int32,System.String)">
+            <summary>
+            获取画板类型列表
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.Configure.ISketchPadTypeService.SaveSketchPadType(Web.Models.Configure.Entity.SketchPadType)">
+            <summary>
+            保存模型类型
+            </summary>
+            <param name="modelType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.DataCoverService.HistoryInfoMation(System.String,System.String)">
+            <summary>
+            获取竖表信息
+            </summary>
+            <param name="ConnectionStr"></param>
+            <param name="SiteCodes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.DataCoverService.RunWithTasksAsync(System.Collections.Generic.List{Web.DTO.IOTTools.DbIotEquipType},Web.DTO.IOTTools.HistoryCountReslut,System.String,System.String)">
+            <summary>
+            开始异步任务
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.DataCoverService.DataCoverAysc(Web.DTO.IOTTools.DbIotEquipType,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+             数据转换
+            </summary>
+            <param name="equipType">设备类型</param>
+            <param name="startTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="SiteCodes">设备编码</param>
+            <param name="ConnectionStr">数据库连接</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.DataCoverService.DataTableToSQLServer(System.Data.DataTable,System.String,System.String)">
+            <summary>
+            批量插入数据
+            </summary>
+            <param name="dt"></param>
+            <param name="tableName">表名</param>
+            <param name="ConnectionStr">数据库名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.DataCoverService.GetDataCover(System.String)">
+            <summary>
+            获取当前任务执行进度
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.IDataCoverService.HistoryInfoMation(System.String,System.String)">
+            <summary>
+            获取历史数据信息服务
+            </summary>
+            <param name="ConnectionStr">数据库连接字符串</param>
+            <param name="SiteCodes">站点编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Web.Services.IOTPlatform.IOTTools.IDataCoverService.GetDataCover(System.String)">
+            <summary>
+            历史数据转换进度
+            </summary>
+            <param name="keys"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>de74eef2-9520-4f80-af35-86d505c7e7be</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <Compile Remove="Controllers\**" />
+    <Content Remove="Controllers\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <None Remove="Controllers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Exceptionless.AspNetCore" Version="4.5.0" /> 
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.0" />
+    <PackageReference Include="Ocelot" Version="16.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConfigBridge\ConfigBridge.csproj" />
+  </ItemGroup>
+
+
+</Project>
