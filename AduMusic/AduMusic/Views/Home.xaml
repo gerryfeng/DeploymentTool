@@ -1,0 +1,212 @@
+﻿<Page x:Class="AduMusic.Views.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AduMusic.Views"
+      xmlns:carousel="clr-namespace:AduMusic.Styles.Carousel"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"  Loaded="Page_Loaded"
+      Title="Home">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/WButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/TabControl_Home.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ScrollView.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid >
+        <TabControl  Style="{StaticResource MyTab}" BorderThickness="0" Background="#06ffffff">
+            <TabItem Style="{StaticResource Wtab}" Header="IIS" Background="#000" >
+                <ScrollViewer Style="{StaticResource WScrollviewer}">
+                    <StackPanel>
+                        <ItemsControl Name="iisData"  FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" Margin="10,10">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel ></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="2"  Margin="10"  Tag="{Binding id}"  Width="820" Background="#50ffffff">
+                                        <StackPanel Orientation="Vertical">
+                                            <Grid>
+                                                <Grid Width="820" Height="130"  HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                                    <Image Source="{Binding cover}" Width="60" Height="60" Margin="20,0,0,30"  HorizontalAlignment="Left">
+                                                        <Image.Clip>
+                                                            <RectangleGeometry RadiusX="30" RadiusY="30" Rect="0,0,60,60"/>
+                                                        </Image.Clip>
+                                                    </Image>
+
+                                                    <Image Source="{Binding cover}" Width="20" Height="20" Margin="45,80,0,0"  HorizontalAlignment="Left">
+                                                        <Image.Clip>
+                                                            <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,10,10"/>
+                                                        </Image.Clip>
+                                                    </Image>
+                                                    <Grid Width="680" Height="130" Margin="130,0,0,0">
+                                                        <TextBlock Text="{Binding SingerName}"  Padding="0,0,0,40" TextTrimming="CharacterEllipsis" TextAlignment="Left"  Foreground="#fff" FontWeight="Light" VerticalAlignment="Center"></TextBlock>
+                                                        <TextBlock Text="{Binding SongName}"  Padding="0,0,0,0"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" TextAlignment="Center"  FontSize="12" Foreground="#50ffffff" VerticalAlignment="Center"></TextBlock>
+                                                        <TextBlock Text="{Binding SongName}"  Padding="0,100,0,40" TextTrimming="CharacterEllipsis" TextAlignment="Left"  Foreground="#50ffffff" FontSize="12"  VerticalAlignment="Center"></TextBlock>
+                                                        <TextBlock Text="{Binding SingerName}"  Padding="0,60,0,0"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Right" TextAlignment="Center"  FontSize="12" Foreground="#50ffffff" VerticalAlignment="Center"></TextBlock>
+                                                    </Grid>
+                                                </Grid>
+                                                <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent"  Content="更新" Margin="25" Height="20" Click="update_Click" Name="update" />
+                                            </Grid>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Style="{StaticResource Wtab}" Header="物联平台" Background="#000" >
+                <ScrollViewer Style="{StaticResource WScrollviewer}">
+                    <StackPanel  >
+                        <ItemsControl Name="wulianData"  FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" Margin="0,10">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel ></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="2"  Margin="10"  Tag="{Binding id}"  Width="130">
+                                        <StackPanel Orientation="Vertical">
+                                            <Grid>
+                                                <Grid Width="130" Height="130"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Image Source="{Binding cover}" Width="130" Height="130" Stretch="UniformToFill" ></Image>
+                                                    <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" Tag="&#xE63F;" Content="96" Margin="4" Height="20"/>
+                                                </Grid>
+                                                <Grid  Background="#10000000" Name="BG">
+                                                    <Button Style="{StaticResource SysButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#fff" FontSize="26"   Margin="6,4" Background="Transparent"  Content="&#xe708;"/>
+                                                </Grid>
+                                                <!--<Grid.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Visibility"   Value="Visible"/>
+                                                    </Trigger>
+                                                </Grid.Triggers>-->
+                                            </Grid>
+                                            <TextBlock Text="{Binding title}"  TextTrimming="CharacterEllipsis" TextAlignment="Left" Margin="0,12" Foreground="#fff" FontWeight="Light" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Text="{Binding speak}"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" TextAlignment="Center" Margin="0" FontSize="12" Foreground="#50ffffff" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Style="{StaticResource Wtab}" Header="pandaGis" Background="#000" >
+                <ScrollViewer Style="{StaticResource WScrollviewer}">
+                    <StackPanel  >
+                        <!--<Grid Name="Homes" Margin="0,20"></Grid>-->
+                        <!--<Grid>
+                            <Label Margin="0,20,0,0" Content="为 你 推 荐 歌 单" FontFamily="微软雅黑" Foreground="#96ffffff"  HorizontalAlignment="Left"  FontSize="16"   />
+                            <Button Width="30" FontSize="14" FontFamily="微软雅黑" Style="{StaticResource SysButton}" HorizontalAlignment="Right" Margin="4,0,0,0"   Background="Transparent"  Content="更多"/>
+                        </Grid>-->
+                        <!--<UniformGrid Columns="9" Margin="0,8" Width="auto">
+                            <Button Style="{StaticResource NorBlueButton}" Content="伤感"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="励志"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="伤感"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="影视"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="网络歌曲"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="90年的"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="背景音乐"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="情歌"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="全部分类"/>
+                        </UniformGrid>-->
+                        <ItemsControl Name="pandaGisData"  FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" Margin="0,10">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel ></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="2"  Margin="10"  Tag="{Binding id}"  Width="130">
+                                        <StackPanel Orientation="Vertical">
+                                            <Grid>
+                                                <Grid Width="130" Height="130"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Image Source="{Binding cover}" Width="130" Height="130" Stretch="UniformToFill" ></Image>
+                                                    <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" Tag="&#xE63F;" Content="96" Margin="4" Height="20"/>
+                                                </Grid>
+                                                <Grid  Background="#10000000" Name="BG">
+                                                    <Button Style="{StaticResource SysButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#fff" FontSize="26"   Margin="6,4" Background="Transparent"  Content="&#xe708;"/>
+                                                </Grid>
+                                                <!--<Grid.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Visibility"   Value="Visible"/>
+                                                    </Trigger>
+                                                </Grid.Triggers>-->
+                                            </Grid>
+                                            <TextBlock Text="{Binding title}"  TextTrimming="CharacterEllipsis" TextAlignment="Left" Margin="0,12" Foreground="#fff" FontWeight="Light" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Text="{Binding speak}"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" TextAlignment="Center" Margin="0" FontSize="12" Foreground="#50ffffff" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Style="{StaticResource Wtab}" Header="GeoServer" Background="#000" >
+                <ScrollViewer Style="{StaticResource WScrollviewer}">
+                    <StackPanel  >
+                        <!--<Grid Name="Homes" Margin="0,20"></Grid>-->
+                        <!--<Grid>
+                            <Label Margin="0,20,0,0" Content="为 你 推 荐 歌 单" FontFamily="微软雅黑" Foreground="#96ffffff"  HorizontalAlignment="Left"  FontSize="16"   />
+                            <Button Width="30" FontSize="14" FontFamily="微软雅黑" Style="{StaticResource SysButton}" HorizontalAlignment="Right" Margin="4,0,0,0"   Background="Transparent"  Content="更多"/>
+                        </Grid>-->
+                        <!--<UniformGrid Columns="9" Margin="0,8" Width="auto">
+                            <Button Style="{StaticResource NorBlueButton}" Content="伤感"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="励志"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="伤感"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="影视"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="网络歌曲"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="90年的"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="背景音乐"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="情歌"/>
+                            <Button Style="{StaticResource NorBlueButton}" Content="全部分类"/>
+                        </UniformGrid>-->
+                        <ItemsControl Name="GeoServerData"  FocusVisualStyle="{x:Null}" HorizontalAlignment="Center" Margin="0,10">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel ></WrapPanel>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border CornerRadius="2"  Margin="10"  Tag="{Binding id}"  Width="130">
+                                        <StackPanel Orientation="Vertical">
+                                            <Grid>
+                                                <Grid Width="130" Height="130"  HorizontalAlignment="Center" VerticalAlignment="Top">
+                                                    <Image Source="{Binding cover}" Width="130" Height="130" Stretch="UniformToFill" ></Image>
+                                                    <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" Tag="&#xE63F;" Content="96" Margin="4" Height="20"/>
+                                                </Grid>
+                                                <Grid  Background="#10000000" Name="BG">
+                                                    <Button Style="{StaticResource SysButton}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="#fff" FontSize="26"   Margin="6,4" Background="Transparent"  Content="&#xe708;"/>
+                                                </Grid>
+                                                <!--<Grid.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Visibility"   Value="Visible"/>
+                                                    </Trigger>
+                                                </Grid.Triggers>-->
+                                            </Grid>
+                                            <TextBlock Text="{Binding title}"  TextTrimming="CharacterEllipsis" TextAlignment="Left" Margin="0,12" Foreground="#fff" FontWeight="Light" VerticalAlignment="Center"></TextBlock>
+                                            <TextBlock Text="{Binding speak}"  TextTrimming="CharacterEllipsis" HorizontalAlignment="Left" TextAlignment="Center" Margin="0" FontSize="12" Foreground="#50ffffff" VerticalAlignment="Center"></TextBlock>
+                                        </StackPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Page>
