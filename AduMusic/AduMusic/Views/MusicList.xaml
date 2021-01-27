@@ -3,27 +3,27 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AduMusic.Views"
-      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="AduMusic.Views.MusicList"
+      xmlns:local="clr-namespace:PublishTool.Views"
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="PublishTool.Views.MusicList"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="600" Loaded="Page_Loaded"
       Title="MusicList">
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Style.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/FormControl.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/TabControl_Friend.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ScrollView.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/SelectDate.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Login.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Menu.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ItemControlTemp.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ListBox.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/WSlider.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/WButton.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ListView.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/DataGridForSong.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/FormControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/TabControl_Friend.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ScrollView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/SelectDate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Login.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Menu.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ItemControlTemp.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ListBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WSlider.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/DataGridForSong.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>

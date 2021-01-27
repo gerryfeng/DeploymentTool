@@ -13,7 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 
-namespace AduMusic.API
+namespace PublishTool.API
 {
     public static class PrivateMethod
     {

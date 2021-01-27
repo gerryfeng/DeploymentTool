@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:controls="clr-namespace:AduMusic.Controls">
+    xmlns:controls="clr-namespace:PublishTool.Controls">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/NorTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/NorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type controls:ImageRadioButton}">
         <Setter Property="Height" Value="31" />

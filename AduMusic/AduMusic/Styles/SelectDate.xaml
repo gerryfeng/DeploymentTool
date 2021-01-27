@@ -81,7 +81,7 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Border x:Name="Back" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  Height="20" Width="20">
-                        <TextBlock Name="icon" FontSize="14" Text="&#xe6c7;" FontFamily="/AduMusic;component/Fonts/#iconfont" Height="20" Margin="2,5,0,0" VerticalAlignment="Center" Foreground="#FF917B"></TextBlock>
+                        <TextBlock Name="icon" FontSize="14" Text="&#xe6c7;" FontFamily="/PublishTool;component/Fonts/#iconfont" Height="20" Margin="2,5,0,0" VerticalAlignment="Center" Foreground="#FF917B"></TextBlock>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
@@ -101,7 +101,7 @@
         <!--<Setter Property="VerticalAlignment" Value="Center"></Setter>-->
         <Setter Property="Cursor" Value="Hand"></Setter>
         <Setter Property="Foreground" Value="#FF96A0B4"></Setter>
-        <Setter Property="FontFamily" Value="/AduMusic;component/Fonts/#iconfont"></Setter>
+        <Setter Property="FontFamily" Value="/PublishTool;component/Fonts/#iconfont"></Setter>
         <Setter Property="FontWeight" Value="Medium"></Setter>
         <Setter Property="FontSize" Value="16"></Setter>
         <Setter Property="Template">
@@ -330,7 +330,7 @@
                             <!--下拉按钮-->
                                 <ToggleButton x:Name="PART_DropDownToggle" Style="{StaticResource ToggleButtonStyle}" IsTabStop="False" BorderBrush="#00000000" 
                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
-                                         Grid.Column="3"  FontSize="14" Content="&#xe6c7;" Foreground="{StaticResource BorderBursh}" FontFamily="/AduMusic;component/Fonts/#iconfont"
+                                         Grid.Column="3"  FontSize="14" Content="&#xe6c7;" Foreground="{StaticResource BorderBursh}" FontFamily="/PublishTool;component/Fonts/#iconfont"
                                           Background="#00000000"/>
                             <!--水印-->
                             <!--<Border Grid.Column="1">

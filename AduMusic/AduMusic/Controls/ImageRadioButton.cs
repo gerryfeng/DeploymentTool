@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace AduMusic.Controls
+namespace PublishTool.Controls
 {
     public class ImageRadioButton:RadioButton
     {

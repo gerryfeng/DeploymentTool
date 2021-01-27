@@ -1,9 +1,9 @@
-﻿<Window x:Class="AduMusic.UserLogin"
+﻿<Window x:Class="PublishTool.UserLogin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AduMusic"
+        xmlns:local="clr-namespace:PublishTool"
         mc:Ignorable="d"
         Title="登录" Height="450" Width="300" AllowsTransparency="True" WindowStyle="None" BorderThickness="20" Icon="Images/ICON/48.ico" MouseLeftButtonDown="Window_MouseLeftButtonDown" WindowStartupLocation="CenterScreen">
     <Window.Effect>
@@ -12,9 +12,9 @@
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Style.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/Login.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/FormControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Login.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/FormControl.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -32,7 +32,7 @@
                 <Grid>
                     <StackPanel Orientation="Horizontal">
                         <Button FocusVisualStyle="{x:Null}" Style="{StaticResource Button_Transparent}" Margin="4,4" Name="BtnSearch"  Foreground="#60ffffff" HorizontalAlignment="Left" FontSize="16" Content="&#xe672;" Width="30"  Background="Transparent" BorderThickness="0"></Button>
-                        <TextBlock Text="AduMusic" FontWeight="Light" Foreground="#60ffffff" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" FontSize="14"></TextBlock>
+                        <TextBlock Text="PublishTool" FontWeight="Light" Foreground="#60ffffff" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0" FontSize="14"></TextBlock>
                     </StackPanel>
                     <Button Style="{StaticResource CloseButton}" VerticalAlignment="Top" Name="btnClose" Width="40" Height="40" FontSize="14" HorizontalAlignment="Right"   Background="Transparent"  Content="&#xe606;" BorderThickness="0" Click="btnClose_Click" />
                 </Grid>

@@ -1,11 +1,11 @@
-﻿AduMusic
+﻿PublishTool
 
 
 winexe
 C#
 .cs
 F:\平台部署工具\DeploymentTool\AduMusic\AduMusic\obj\Debug\
-AduMusic
+PublishTool
 none
 false
 DEBUG;TRACE

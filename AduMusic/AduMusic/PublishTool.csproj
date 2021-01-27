@@ -7,8 +7,8 @@
     <ProjectGuid>{567C5328-B5ED-48B6-88EC-AC91FF5C924D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AduMusic</RootNamespace>
-    <AssemblyName>AduMusic</AssemblyName>
+    <RootNamespace>PublishTool</RootNamespace>
+    <AssemblyName>PublishTool</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -257,6 +257,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background\图标.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Background\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ICON\geoserver.png" />
+    <Resource Include="Images\ICON\IIS.png" />
+    <Resource Include="Images\ICON\pandagis.png" />
+    <Resource Include="Images\ICON\主页.png" />
+    <Resource Include="Images\ICON\关于.png" />
+    <Resource Include="Images\ICON\导入.png" />
+    <Resource Include="Images\ICON\检查更新.png" />
+    <Resource Include="Images\ICON\灰灯.png" />
+    <Resource Include="Images\ICON\物联平台.png" />
+    <Resource Include="Images\ICON\系统日志.png" />
+    <Resource Include="Images\ICON\绿灯.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

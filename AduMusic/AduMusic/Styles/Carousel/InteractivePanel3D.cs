@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
-namespace AduMusic.Styles.Carousel
+namespace PublishTool.Styles.Carousel
 {
     public class InteractivePanel3D : InteractiveVisual3D, IDisposable
     {

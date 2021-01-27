@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AduMusic.Views
+namespace PublishTool.Views
 {
     /// <summary>
     /// MusicList.xaml 的交互逻辑
@@ -33,7 +33,7 @@ namespace AduMusic.Views
                 Song s = new Song();
                 s.SongName = i+"没想到你是这样的播放器";
                 s.SingerName = "冷主播";
-                s.ZhuanName = "AduMusic";
+                s.ZhuanName = "PublishTool";
                 s.SongSize = "2MB";
                 li_song.Add(s);
             }

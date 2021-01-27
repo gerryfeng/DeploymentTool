@@ -3,7 +3,7 @@
            xmlns:s="clr-namespace:System;assembly=mscorlib">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/ScrollView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ScrollView.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <!-- DataGrid*********************************************************************************************************** -->
     <Style TargetType="DataGrid">

@@ -37,7 +37,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type CheckBox}">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Name="icon" FontSize="22" Margin="0,2,0,0" Text="&#xe630;" FontFamily="/AduMusic;component/Fonts/#iconfont" VerticalAlignment="Center" Foreground="#40ffffff"></TextBlock>
+                        <TextBlock Name="icon" FontSize="22" Margin="0,2,0,0" Text="&#xe630;" FontFamily="/PublishTool;component/Fonts/#iconfont" VerticalAlignment="Center" Foreground="#40ffffff"></TextBlock>
                         <TextBlock Name="text" VerticalAlignment="Center" Margin="6,0,0,0" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" FontSize="12" ></TextBlock>
                     </StackPanel>
                     <!--控件触发器-->
@@ -82,7 +82,7 @@
                 <ControlTemplate TargetType="RadioButton">
                     <Border Background="Transparent" BorderThickness="0" >
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Name="CheckArea" FontSize="18" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="/AduMusic;component/Fonts/#iconfont"  Text="&#xe672;" Foreground="#FF917B"></TextBlock>
+                            <TextBlock Name="CheckArea" FontSize="18" Margin="0,0,0,0" VerticalAlignment="Center" FontFamily="/PublishTool;component/Fonts/#iconfont"  Text="&#xe672;" Foreground="#FF917B"></TextBlock>
                             <TextBlock VerticalAlignment="Center" Margin="2,0,0,2" Text="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"></TextBlock>
                         </StackPanel>
                     </Border>
@@ -115,7 +115,7 @@
             <Setter.Value>
                 <ControlTemplate>
                     <Border x:Name="Back" Background="Transparent" BorderThickness="0" BorderBrush="Transparent"  Height="20" Width="20">
-                        <TextBlock Name="icon" FontSize="14" Text="&#xe656;" FontFamily="/AduMusic;component/Fonts/#iconfont" Height="20" Margin="2,5,0,0" VerticalAlignment="Center" Foreground="#FF917B"></TextBlock>
+                        <TextBlock Name="icon" FontSize="14" Text="&#xe656;" FontFamily="/PublishTool;component/Fonts/#iconfont" Height="20" Margin="2,5,0,0" VerticalAlignment="Center" Foreground="#FF917B"></TextBlock>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace AduMusic
+namespace PublishTool
 {
     /// <summary>
     /// UserLogin.xaml 的交互逻辑

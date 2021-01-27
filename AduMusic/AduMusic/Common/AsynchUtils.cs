@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
-namespace AduMusic.Common
+namespace PublishTool.Common
 {
     public class AsynchUtils
     {

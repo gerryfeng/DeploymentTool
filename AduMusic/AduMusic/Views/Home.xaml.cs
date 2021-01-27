@@ -1,5 +1,5 @@
-﻿using AduMusic.Common;
-using AduMusic.Styles.Carousel;
+﻿using PublishTool.Common;
+using PublishTool.Styles.Carousel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace AduMusic.Views
+namespace PublishTool.Views
 {
     /// <summary>
     /// Home.xaml 的交互逻辑
@@ -27,8 +27,8 @@ namespace AduMusic.Views
                 Song s = new Song();
                 s.SongName = i + "没想到你是这样的播放器";
                 s.SingerName = "冷主播";
-                s.cover = "/Images/Background/图标.png";
-                s.ZhuanName = "AduMusic";
+                s.cover = "/Images/ICON/物联平台.png";
+                s.ZhuanName = "PublishTool";
                 s.SongSize = "2MB";
                 list.Add(s);
             }

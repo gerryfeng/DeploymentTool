@@ -3,7 +3,7 @@
     <!--<DropShadowEffect  Color="#fff" Opacity=".25" BlurRadius="5" ShadowDepth="5"/>-->
     <!--<DropShadowEffect ShadowDepth="0" Color="#fff" Opacity=".2" BlurRadius="10"/>-->
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="pack://application:,,,/AduMusic;component/Styles/NorTheme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/NorTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <DropShadowEffect   x:Key="ThumbShadow" BlurRadius="10" Opacity="0.8" ShadowDepth="0" Color="#fff"/>
 

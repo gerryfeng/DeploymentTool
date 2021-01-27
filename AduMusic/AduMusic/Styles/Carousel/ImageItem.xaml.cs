@@ -1,5 +1,5 @@
-﻿using AduMusic.API;
-using AduMusic.Common;
+﻿using PublishTool.API;
+using PublishTool.Common;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AduMusic.Styles.Carousel
+namespace PublishTool.Styles.Carousel
 {
     /// <summary>
     /// ImageItem.xaml 的交互逻辑

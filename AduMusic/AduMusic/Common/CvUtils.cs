@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 
-namespace AduMusic.Common
+namespace PublishTool.Common
 {
     public class CvUtils
     {
