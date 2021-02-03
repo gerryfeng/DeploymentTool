@@ -1,0 +1,202 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:a="clr-namespace:PublishTool.Controls"
+      xmlns:local="clr-namespace:PublishTool.Views"
+      xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="PublishTool.Views.WebMainAdd"
+      mc:Ignorable="d" d:DesignWidth="500" Loaded="Page_Loaded"
+      Title="MusicList" Height="800">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/FormControl.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/TabControl_Friend.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ScrollView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/SelectDate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Login.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Menu.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ItemControlTemp.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ListBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WSlider.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ListView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/DataGridForSong.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Page.Resources>
+    <ScrollViewer Style="{StaticResource WScrollviewer}">
+        <StackPanel  Background="#1b2c43">
+            <Grid >
+                <Grid>
+                    <Grid>
+                        <StackPanel Margin="0,20,0,0">
+                            <Grid Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="34" Width="34" HorizontalAlignment="Center">
+                                    <!--<Grid.Background>
+                                        <ImageBrush ImageSource="../Images/ICON/IIS.png" Stretch="Fill"   />
+                                    </Grid.Background>-->
+                                    <Image Source="../Images/ICON/IIS.png" Name="TitleImg"></Image>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Label FontSize="13" FontWeight="Bold" Name="Title" Foreground="#fff" Content="IIS" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                </Grid>
+                                <Grid Grid.Column="2">
+                                    <!--<StackPanel>
+                                        <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Transparent"  Content="保存"   Name="update" Margin="0,0,30,0" Click="dataSave" />
+                                    </StackPanel>-->
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,80,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="650"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="50">
+                                    <StackPanel>
+                                        <Label FontSize="12"  Foreground="#fff" Content="站点名称：" Margin="40,10,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="30">
+                                    <StackPanel>
+                                        <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff" BorderThickness="1,1,1,1" Background="Transparent" Height="30">
+                                            <Grid>
+                                                <TextBox Text="" Name="siteName" FontSize="12"  Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
+                                                <TextBox Text="" Name="type" FontSize="12"  Visibility="Hidden" /> 
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,130,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="538"/>
+                                    <ColumnDefinition Width="120"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="50">
+                                    <StackPanel>
+                                        <Label FontSize="12"  Foreground="#fff" Content="网站路径：" Margin="40,10,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="30">
+                                    <StackPanel>
+                                        <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff" BorderThickness="1,1,1,1" Background="Transparent" Height="30">
+                                            <Grid>
+                                                <TextBox Text=""  FontSize="12" Name="Filepath" Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="2" Height="30">
+                                    <StackPanel>
+                                        <Button Style="{StaticResource LoginButton}" Name="check" Background="Transparent" BorderBrush="#60ffffff"  Foreground="#60ffffff" Content="选择文件" Width="100" Height="30" Click="btn_FileClick" ></Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,180,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="650"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="50">
+                                    <StackPanel>
+                                        <Label FontSize="12"  Foreground="#fff" Content="IP地址：" Margin="40,10,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="30">
+                                    <StackPanel>
+                                        <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff" BorderThickness="1,1,1,1" Background="Transparent" Height="30">
+                                            <Grid>
+                                                <TextBox Text="" Name="ipAddress"  FontSize="12" Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,230,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="650"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="50">
+                                    <StackPanel>
+                                        <Label FontSize="12"  Foreground="#fff" Content="端口号：" Margin="40,10,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="30">
+                                    <StackPanel>
+                                        <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff" BorderThickness="1,1,1,1" Background="Transparent" Height="30">
+                                            <Grid>
+                                                <TextBox Text=""  FontSize="12" Name="port" Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,280,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="140"/>
+                                    <ColumnDefinition Width="600"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="50">
+                                    <StackPanel>
+                                        <Label FontSize="12"  Foreground="#fff" Content="是否启用网关：" Margin="40,10,0,0" />
+                                    </StackPanel>
+                                </Grid>
+                                <Grid Grid.Column="1" Height="30">
+                                    <StackPanel>
+                                        <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff"  Background="Transparent" Height="30">
+                                            <Grid>
+                                                <CheckBox Style="{StaticResource WCheckBox}" IsChecked="True" Name="isUseWg" HorizontalAlignment="Left" Content="是" Margin="0,4" Click="DataexChange" ></CheckBox>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel Margin="0,330,0,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="750"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" Height="100">
+                                    <StackPanel HorizontalAlignment="Right">
+                                        <Button Style="{StaticResource LoginButton}" Name="quite" Background="Transparent" BorderBrush="#60ffffff"  Foreground="#60ffffff" Content="取消" Width="100" Height="30" Click="btn_QuiteClick" ></Button>
+                                        <Button Style="{StaticResource LoginButton}" Name="Add" Background="Transparent" BorderBrush="#60ffffff"  Foreground="#60ffffff" Content="确定" Width="100" Height="30" Margin="250,-30,0,0" Click="btn_SaveClick"></Button>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+                    <Grid>
+                        <DockPanel>
+                            <Grid  DockPanel.Dock="Top" Name="lodingGrid" Visibility="Hidden">
+                                <a:LoadingWait x:Name="_loading"  Visibility="Visible"/>
+                            </Grid>
+                        </DockPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+
+</Page>

@@ -1,0 +1,220 @@
+﻿<Window x:Class="PublishTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:PublishTool.Controls"
+        xmlns:a="clr-namespace:PublishTool.Controls"
+        Title="无尽FM" Height="770" MinHeight="770" Width="1146" MinWidth="1146" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown"  StateChanged="Window_StateChanged" WindowStyle="None" BorderThickness="40" Icon="Images/ICON/48.ico" WindowStartupLocation="CenterScreen">
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="40" Opacity="0.4" ShadowDepth="0"/>
+    </Window.Effect>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/FormControl.xaml"/>
+                <!--<ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/TabControl.xaml"/>-->
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ScrollView.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/SelectDate.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Login.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Menu.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ItemControlTemp.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/ListBox.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WSlider.xaml"/>
+                <!--<ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/WSSlider.xaml"/>-->
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Expander.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/RadioButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Background/background.png" Stretch="UniformToFill"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" Background="#10ffffff">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <StackPanel  Margin="13">
+                    <Grid>
+                        <Border CornerRadius="3" Height="54" Width="54" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
+                            <Image Source="Images/Background/图标.png" Width="54" Height="54" Clip="{StaticResource ResourceKey=UserInfoHeader}">
+                            </Image>
+                        </Border>
+                        <Label Content="项目部署工具" Foreground="White"   HorizontalAlignment="Center"  FontSize="16px" Margin="55,16,0,0" FontWeight="Bold"  />
+                    </Grid>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <ScrollViewer Style="{StaticResource WScrollviewer}" Margin="0,0,0,0">
+                    <StackPanel Margin="10,0">
+                        <Expander Style="{StaticResource NoExpander}" Header="项目部署" IsExpanded="True" Margin="0,11,0,0">
+                            <StackPanel>
+                                <controls:ImageRadioButton
+                                Content="主页"
+                                GroupName="Menu"
+                                ImageHeight="15" ImageWidth="15"
+                                     Tag="Views/Home.xaml" Click="ImageRadioButton_Click"
+                                Image="{StaticResource Icon_Main}"
+                                IsChecked="True" />
+                                <controls:ImageRadioButton
+                                Content="系统日志"
+                                GroupName="Menu"
+                                ImageHeight="15" ImageWidth="15"
+                                Image="{StaticResource Icon_Log}"
+                                 />
+                                <controls:ImageRadioButton
+                                Content="检查更新"
+                                GroupName="Menu"
+                                ImageHeight="15" ImageWidth="15"
+                                Image="{StaticResource Icon_Update}"
+                                 />
+                                <controls:ImageRadioButton
+                                Content="关于"
+                                GroupName="Menu"
+                                ImageHeight="15" ImageWidth="15"
+                                Image="{StaticResource Icon_About}"
+                                 />
+                            </StackPanel>
+                        </Expander>
+                        <!--<Expander Header="我创建的歌单" IsExpanded="{Binding IsPluginExpanded}" Margin="0,11,0,0">
+                            <StackPanel>
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                    Tag="Views/MusicList.xaml"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" Click="ImageRadioButton_Click" />
+                                <controls:ImageRadioButton
+                                Content="小情歌"
+                                    Tag="Views/MusicList.xaml"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" Click="ImageRadioButton_Click" />
+                                <controls:ImageRadioButton
+                                Content="因为年轻，所以不将就"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="长夜漫漫，唯乐作伴"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="云上音乐"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="欢乐时光"
+                                GroupName="Menu" ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}" IsChecked="False" />
+                            </StackPanel>
+                        </Expander>
+                        <Expander Header="我收藏的歌单" IsExpanded="{Binding IsPluginExpanded}" Margin="0,11,0,0">
+                            <StackPanel>
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                                <controls:ImageRadioButton
+                                Content="我心向阳"
+                                GroupName="Menu"
+                                ImageHeight="14" ImageWidth="14"
+                                Image="{StaticResource Icon_Music}"
+                                IsChecked="False" />
+                            </StackPanel>
+                        </Expander>-->
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Background="#05000000">
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Width="30" Style="{StaticResource SysButton}" Margin="6,0,0,0"   Background="Transparent"  Content="&#xe60b;" Name="lastPage" Click="lastPage_Click" />
+                <Button Width="30" Style="{StaticResource SysButton}" Margin="4,0,0,0"   Background="Transparent"  Content="&#xe60d;" Name="NextPage" Click="nextPage_Click" />
+                <Button Width="30" Style="{StaticResource SysButton}" Margin="4,0,0,0"   Background="Transparent"  Content="&#xe794;" Name="refresh" Click="refresh_Click" />
+                <Border CornerRadius="12" BorderBrush="#16000000"  Background="#20ffffff" Width="200" Height="24" Margin="6,0,0,0">
+                    <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="4,0">
+                        <TextBox  Width="166" Margin="4,0" FontSize="13" Foreground="#70ffffff" VerticalAlignment="Center" ForceCursor="True" FontWeight="Light" Background="Transparent"  BorderThickness="0"/>
+                        <Button Style="{StaticResource SysButton}" Foreground="#50ffffff" Content="&#xe734;" FontSize="16" HorizontalAlignment="Left" Width="16"  Background="Transparent" BorderThickness="0"  ></Button>
+                    </StackPanel>
+                </Border>
+                <Button Width="100" Style="{StaticResource SysButton}" Margin="16,0,0,0"  FontSize="14"  Background="Transparent" Name="Input" Click="input_Click" Content="智能导入"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,16,0">
+                <!--<Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent" Content="&#xe642;"/>
+                <Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent" FontSize="20" Content="&#xe66e;"/>
+                <Button Style="{StaticResource SysButton}" Width="30" FontSize="20" Background="Transparent"  Content="&#xe61f;"/>-->
+                <Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent"  Content="&#xe62c;"/>
+                <Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent"  Content="&#xe726;" Name="Mini" Click="Mini_Click"/>
+                <Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent"  Content="&#xe62d;" Name="Min" Click="Min_Click"/>
+                <Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent"  Content="&#xe611;" Name="Max" Click="Max_Click"/>
+                <Button Style="{StaticResource SysButton}" Width="30" Name="Close" Margin="4,0,0,0"   Background="Transparent"  Content="&#xe606;" Click="Close_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Background="#05000000"  Margin="0,0,0,0" Grid.RowSpan="2">
+            <Frame  x:Name="mainFrame" Source="Views/Home.xaml"  NavigationUIVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0,0,0,0" Opacity="0.805"/>
+        </Grid>
+        <DockPanel>
+            <Grid Background="#FF484848" DockPanel.Dock="Top" Name="lodingGrid" Visibility="Hidden">
+                <a:LoadingWait x:Name="_loading"  Visibility="Visible"/>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

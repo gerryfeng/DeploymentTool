@@ -1,0 +1,29 @@
+﻿<Window x:Class="PublishTool.Views.LodingWin"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PublishTool"
+        xmlns:a="clr-namespace:PublishTool.Controls"
+        mc:Ignorable="d"
+        Title="登录" Height="550" Width="800" AllowsTransparency="True" WindowStyle="None" BorderThickness="20" >
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="40" Opacity="0.3" ShadowDepth="0"/>
+    </Window.Effect>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Style.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/Login.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/PublishTool;component/Styles/FormControl.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <Grid Background="#FF484848" DockPanel.Dock="Top" Name="lodingGrid" Visibility="Visible" Opacity="0.8">
+                <a:LoadingWait x:Name="_loading"  Visibility="Visible"/>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
