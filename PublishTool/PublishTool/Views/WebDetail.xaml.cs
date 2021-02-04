@@ -67,28 +67,27 @@ namespace PublishTool.Views
                     title.Content = "IIS";
                     var ImageUrl = "../Images/ICON/IIS.png";
                     TitleImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
-                    HeaderImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
+                   
                 }
                 else if (siteType == "WL")
                 {
                     title.Content = "物联平台";
                     var ImageUrl = "../Images/ICON/物联平台.png";
                     TitleImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
-                    HeaderImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
+                   
                 }
                 else if (siteType == "PandaGis")
                 {
                     title.Content = "PandaGis";
                     var ImageUrl = "../Images/ICON/pandagis.png";
                     TitleImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
-                    HeaderImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
+                   
                 }
                 else
                 {
                     title.Content = "GeoServer";
                     var ImageUrl = "../Images/ICON/geoserver.png";
                     TitleImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
-                    HeaderImg.Source = new BitmapImage(new Uri(ImageUrl, UriKind.Relative));
                 }
             }
         }

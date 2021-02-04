@@ -29,7 +29,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <ScrollViewer Style="{StaticResource WScrollviewer}">
-        <StackPanel  Background="#1b2c43">
+        <StackPanel  Background="#a3473d">
             <Grid >
                 <Grid>
                     <Grid>

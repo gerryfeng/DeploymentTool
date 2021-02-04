@@ -29,7 +29,7 @@
     </Window.Resources>
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="Images/Background/background.png" Stretch="UniformToFill"></ImageBrush>
+            <ImageBrush ImageSource="Images/NewIcon/背景.png" Stretch="UniformToFill"></ImageBrush>
         </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"></RowDefinition>
@@ -49,7 +49,7 @@
                 <StackPanel  Margin="13">
                     <Grid>
                         <Border CornerRadius="3" Height="54" Width="54" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,0,0,0">
-                            <Image Source="Images/Background/图标.png" Width="54" Height="54" Clip="{StaticResource ResourceKey=UserInfoHeader}">
+                            <Image Source="Images/NewIcon/Top.png" Width="54" Height="54" Clip="{StaticResource ResourceKey=UserInfoHeader}">
                             </Image>
                         </Border>
                         <Label Content="项目部署工具" Foreground="White"   HorizontalAlignment="Center"  FontSize="16px" Margin="55,16,0,0" FontWeight="Bold"  />
@@ -66,25 +66,25 @@
                                 GroupName="Menu"
                                 ImageHeight="15" ImageWidth="15"
                                      Tag="Views/Home.xaml" Click="ImageRadioButton_Click"
-                                Image="{StaticResource Icon_Main}"
+                                Image="{StaticResource Icon_MainNew}"
                                 IsChecked="True" />
                                 <controls:ImageRadioButton
                                 Content="系统日志"
                                 GroupName="Menu"
                                 ImageHeight="15" ImageWidth="15"
-                                Image="{StaticResource Icon_Log}"
+                                Image="{StaticResource Icon_LogNew}"
                                  />
                                 <controls:ImageRadioButton
                                 Content="检查更新"
                                 GroupName="Menu"
                                 ImageHeight="15" ImageWidth="15"
-                                Image="{StaticResource Icon_Update}"
+                                Image="{StaticResource Icon_UpdateNew}"
                                  />
                                 <controls:ImageRadioButton
                                 Content="关于"
                                 GroupName="Menu"
                                 ImageHeight="15" ImageWidth="15"
-                                Image="{StaticResource Icon_About}"
+                                Image="{StaticResource Icon_AboutNew}"
                                  />
                             </StackPanel>
                         </Expander>

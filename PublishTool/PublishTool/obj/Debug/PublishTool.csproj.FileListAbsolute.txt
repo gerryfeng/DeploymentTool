@@ -115,3 +115,4 @@ F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\Web
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\WebMainAdd.baml
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\MessageWindow.g.cs
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\MessageWindow.baml
+F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\PublishTool_Content.g.cs

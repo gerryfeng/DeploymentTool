@@ -28,7 +28,7 @@
         </ResourceDictionary>
     </Page.Resources>
     <ScrollViewer Style="{StaticResource WScrollviewer}">
-        <StackPanel  Background="#1b2c43">
+        <StackPanel  Background="#a3473d">
             <Grid >
                 <Grid>
                     <Grid>
@@ -62,8 +62,8 @@
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Grid Grid.Column="0" Height="34" Width="34" HorizontalAlignment="Center">
-                                    <Image Source="../Images/ICON/IIS.png" Name="HeaderImg"></Image>
+                                <Grid Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Center">
+                                    <Image Source="../Images/NewIcon/网站配置_白.png" Name="HeaderImg"></Image>
                                 </Grid>
                                 <Grid Grid.Column="1">
                                     <Label FontSize="13" FontWeight="Bold" Foreground="#fff" Content="网站配置" HorizontalAlignment="Left" VerticalAlignment="Center" />
@@ -83,7 +83,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0" Height="50">
                                     <StackPanel>
-                                        <Label FontSize="12"  Foreground="#fff" Content="站点名称：" Margin="40,10,0,0" />
+                                        <Label FontSize="12"  Foreground="#fff" Content="站点名称：" Margin="50,10,0,0" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="1" Height="30">
@@ -105,7 +105,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0" Height="50">
                                     <StackPanel>
-                                        <Label FontSize="12"  Foreground="#fff" Content="IP地址：" Margin="40,10,0,0" />
+                                        <Label FontSize="12"  Foreground="#fff" Content="IP地址：" Margin="50,10,0,0" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="1" Height="30">
@@ -127,7 +127,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0" Height="50">
                                     <StackPanel>
-                                        <Label FontSize="12"  Foreground="#fff" Content="端口号：" Margin="40,10,0,0" />
+                                        <Label FontSize="12"  Foreground="#fff" Content="端口号：" Margin="50,10,0,0" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="1" Height="30">
@@ -149,7 +149,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Grid Grid.Column="0" Height="50">
                                     <StackPanel>
-                                        <Label FontSize="12"  Foreground="#fff" Content="是否启用网关：" Margin="40,10,0,0" />
+                                        <Label FontSize="12"  Foreground="#fff" Content="是否启用网关：" Margin="50,10,0,0" />
                                     </StackPanel>
                                 </Grid>
                                 <Grid Grid.Column="1" Height="30">

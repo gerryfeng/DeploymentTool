@@ -63,7 +63,7 @@ namespace PublishTool.Tool
                             IsOpenWg = jpMessageItem["IsOpenWg"]
 
                         };
-                        webSiteInfo.StateImg = "/Images/ICON/绿灯.png";
+                        webSiteInfo.StateImg = "/Images/NewIcon/绿灯.png";
                         if (jpMessageItem["Tag"] == "IIS")
                         {
                             webSiteInfo.ImageUrl = "/Images/ICON/IIS.png";

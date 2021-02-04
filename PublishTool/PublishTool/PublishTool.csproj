@@ -83,6 +83,7 @@
     <Compile Include="MiniWindow.xaml.cs">
       <DependentUpon>MiniWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Styles\Carousel\Carousel2DView.xaml.cs">
       <DependentUpon>Carousel2DView.xaml</DependentUpon>
     </Compile>
@@ -327,6 +328,24 @@
       <Project>{d128ea39-a098-4393-8f9f-1b4ae369db42}</Project>
       <Name>PublishTool.Tool</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NewIcon\灰灯.png" />
+    <Resource Include="Images\NewIcon\绿灯.png" />
+    <Resource Include="Images\NewIcon\网站配置_白.png" />
+    <Resource Include="Images\NewIcon\网站配置.png" />
+    <Resource Include="Images\NewIcon\Top.png" />
+    <Content Include="Images\NewIcon\主页.svg" />
+    <Content Include="Images\NewIcon\停止.svg" />
+    <Content Include="Images\NewIcon\关于.svg" />
+    <Content Include="Images\NewIcon\播放.svg" />
+    <Content Include="Images\NewIcon\新增.svg" />
+    <Content Include="Images\NewIcon\检查更新.svg" />
+    <Content Include="Images\NewIcon\浏览.svg" />
+    <Content Include="Images\NewIcon\系统日志.svg" />
+    <Content Include="Images\NewIcon\网站配置.svg" />
+    <Resource Include="Images\NewIcon\背景.png" />
+    <Content Include="Images\NewIcon\重启.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
