@@ -195,7 +195,7 @@
                         <Button Style="{StaticResource SysButton}" Foreground="#50ffffff" Content="&#xe734;" FontSize="16" HorizontalAlignment="Left" Width="16"  Background="Transparent" BorderThickness="0"  ></Button>
                     </StackPanel>
                 </Border>
-                <Button Width="100" Style="{StaticResource SysButton}" Margin="16,0,0,0"  FontSize="14"  Background="Transparent" Name="Input" Click="input_Click" Content="智能导入"/>
+                <!--<Button Width="100" Style="{StaticResource SysButton}" Margin="16,0,0,0"  FontSize="14"  Background="Transparent" Name="Input" Click="input_Click" Content="智能导入"/>-->
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,16,0">
                 <!--<Button Style="{StaticResource SysButton}" Width="30"  Background="Transparent" Content="&#xe642;"/>
