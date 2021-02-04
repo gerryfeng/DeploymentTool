@@ -105,7 +105,6 @@ namespace PublishTool.Views
             {
                 var configPath = AppDomain.CurrentDomain.BaseDirectory + "config.json";
                 JsonConfigHelper helper = new JsonConfigHelper(configPath);
-                lodingGrid.Visibility = Visibility.Visible;
                 siteName.IsEnabled = false;
                 Filepath.IsEnabled = false;
                 ipAddress.IsEnabled = false;
@@ -114,7 +113,7 @@ namespace PublishTool.Views
                 var gitPackages = helper.GetValue<List<GitPackage>>("GitPackages");
                 var filePath = this.Filepath.Text;
                 var directoryStr = filePath + gitPackages.Find(x => x.PackageName.Equals("Publish")).StoragePath;
-                if (string.IsNullOrEmpty(directoryStr))
+                if (string.IsNullOrEmpty(filePath))
                 {
                     showMessageWinDow("部署服务前请选择文件路径");
                 }
@@ -125,7 +124,7 @@ namespace PublishTool.Views
             }
             else
             {
-
+                showMessageWinDow("保存失败,请检查基本信息以及端口号是否重复！");
             }
         }
 
@@ -149,12 +148,34 @@ namespace PublishTool.Views
             {
                 flag = false;
             }
+            var mndata = manager.Sites;
+            foreach (var s in mndata)
+            {
+                if (s.Name.Equals(siteName.Text))
+                {
+                    flag = false;
+                    break;
+                }
+                if (!s.Name.Equals("Default Web Site"))
+                {
+                   
+                    foreach (var tmp in s.Bindings)
+                    {
+                        if (tmp.EndPoint.Port.ToString().Equals(port.Text))
+                        {
+                            flag = false;
+                            break;
+                        }
+                    }
+                }
+            }
             return flag;
         }
         private async void MainClon(string directoryStr, List<GitPackage> gitPackages)
         {
             TaskCallBack += Accomplish;
             WriteHelp.IsExistDirectory(directoryStr);
+            lodingGrid.Visibility = Visibility.Visible;
             foreach (var item in gitPackages)
             {
                 //if (item.PackageName == "Publish")
@@ -219,21 +240,16 @@ namespace PublishTool.Views
             {
                 return;
             }
-            foreach (var s in manager.Sites)//遍历网站
-            {
-                if (!s.Name.Equals("Default Web Site"))
-                {
-                    foreach (var tmp in s.Bindings)
-                    {
-                        if (tmp.EndPoint.Address.ToString().Equals(ip.Equals("*") ? "0.0.0.0" : ip) && tmp.EndPoint.Port.ToString().Equals(port))
-                        {
-                            return;
-                        }
-                    }
-                }
-            }
             setConfiguration(ip, Port);
-            CreateSite(SiteName, ip, Convert.ToInt32(Port), directoryStr);
+            try
+            {
+                CreateSite(SiteName, ip, Convert.ToInt32(Port), directoryStr);
+            }
+            catch (Exception)
+            {
+                showMessageWinDow("发布网站失败");
+            }
+          
 
         }
         public static ApplicationPool FindApplicationPoolByName(string poolName)
@@ -530,7 +546,7 @@ namespace PublishTool.Views
             }
             catch (Exception)
             {
-
+                showMessageWinDow("修改(oms/授权/网关)配置文件信息失败");
             }
         }
 
@@ -553,18 +569,6 @@ namespace PublishTool.Views
                 var git = new CommandRunner("git", initPath);
 
                 string logs = git.Run(cloneUrl);
-
-                //if (string.IsNullOrEmpty(logs)) 
-                //{
-                //    if (package== "Publish")
-                //    {
-
-
-                //    }
-                //}
-                //Thread.Sleep(6000);
-                //UpdataUIStatus(1);
-                //MessageBox.Show("开始任务");
             }
             catch (Exception ex)
             {

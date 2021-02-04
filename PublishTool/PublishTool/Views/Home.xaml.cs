@@ -141,7 +141,9 @@ namespace PublishTool.Views
         }
         private void File_MouseDown(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(AppDomain.CurrentDomain.BaseDirectory);
+            Button btn = sender as Button;
+            var path = btn.CommandParameter as string;
+            System.Diagnostics.Process.Start(path);
         }
         private void AddIISWeb_Click(object sender, RoutedEventArgs e)
         {

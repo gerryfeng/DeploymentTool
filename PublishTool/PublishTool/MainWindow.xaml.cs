@@ -32,16 +32,12 @@ namespace PublishTool
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            //Application.Current.Shutdown();
             Environment.Exit(0);
         }
 
         private void Mini_Click(object sender, RoutedEventArgs e)
         {
-            //MiniWindow mw = new MiniWindow(this);
-            //mw.Show();
-            //this.Hide();
-
+            this.WindowState = System.Windows.WindowState.Minimized;
         }
 
         private void Max_Click(object sender, RoutedEventArgs e)
@@ -80,7 +76,7 @@ namespace PublishTool
 
         private void Min_Click(object sender, RoutedEventArgs e)
         {
-            //this.WindowState = WindowState.Minimized;
+            this.WindowState = WindowState.Minimized;
         }
 
         private void ImageRadioButton_Click(object sender, RoutedEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Web.Administration;
+using Newtonsoft.Json;
 using PublishTool.Tool;
 using PublishTool.Tool.Model;
 using System;
@@ -106,37 +107,117 @@ namespace PublishTool.Views
             var data = datalist.Find(x => x.Port == port.Text && x.SiteName != siteName.Text);
             if (data == null)
             {
-                getParamSetting.Save(websiteInfo);
-
-            }
-            foreach (var s in manager.Sites)//遍历网站
-            {
-                if (!s.Name.Equals("Default Web Site") && !s.Name.Equals(siteName))
+                foreach (var s in manager.Sites)//遍历网站
                 {
-                    foreach (var tmp in s.Bindings)
+                    if (!s.Name.Equals("Default Web Site") && !s.Name.Equals(siteName.Text))
                     {
-                        if (tmp.EndPoint.Address.ToString().Equals(ipAddress.Text.Equals("*") ? "0.0.0.0" : ipAddress.Text) && tmp.EndPoint.Port.ToString().Equals(port.Text))
+                        foreach (var tmp in s.Bindings)
                         {
-                            MessageWindow messageWindow0 = new MessageWindow("未作修改或站点重复，保存失败");
-                            messageWindow0.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                            messageWindow0.ShowDialog();
-                            return;
+                            if (tmp.EndPoint.Port.ToString().Equals(port.Text))
+                            {
+                                showMessageWinDow("端口号重复，保存失败");
+                                return;
+                            }
                         }
                     }
                 }
+                getParamSetting.Save(websiteInfo);
+                ReStartWeb();
+                showMessageWinDow("保存成功");
+
             }
-            ReStartWeb();
-            MessageWindow messageWindow = new MessageWindow("保存成功");
+            else
+            {
+                showMessageWinDow("端口号重复，保存失败");
+            }
+            
+           
+            //Home home = new Home();
+            //NavigationService.GetNavigationService(this).Navigate(home);
+        }
+
+        public void showMessageWinDow(string Msg)
+        {
+            MessageWindow messageWindow = new MessageWindow(Msg);
             messageWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             messageWindow.ShowDialog();
-            Home home = new Home();
-            NavigationService.GetNavigationService(this).Navigate(home);
+        }
+        public void setConfiguration(string ip, string port)
+        {
+            ip = ip.Equals("*") ? "localhost" : ip;
+            var directoryStr= path.Content+ gitPackages.Find(x => x.PackageName.Equals("Publish")).StoragePath;
+            string omsPath = directoryStr + "\\ConfCenter\\NetCoreConfigs\\OMS\\appsettings.json";
+            string identityPath = directoryStr + "\\ConfCenter\\NetCoreConfigs\\Identity\\identity.json";
+            string ocelotPath = directoryStr + "\\ConfCenter\\NetCoreConfigs\\GateWay\\ocelot.json";
+            var IsGateWAY = isUseWg.IsChecked;
+            try
+            {
+                string omsJson, identityJson, gateWayJson;
+                #region 修改oms配置文件
+                using (FileStream reader = File.Open(omsPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                {
+                    int len = (int)reader.Length;
+                    byte[] bytes = new byte[len];
+                    reader.Read(bytes, 0, len);
+                    dynamic jsonObj = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(bytes));
+
+                    string identiyUrl = jsonObj["AppSetting"].IdentityServerUrl.Value;
+                    Uri omsUrl = new Uri(identiyUrl);
+                    jsonObj["AppSetting"].IsGateWay.Value = IsGateWAY.ToString().ToLower();
+                    jsonObj["AppSetting"].IdentityServerUrl.Value = $"http://{ip}:{port}{omsUrl.AbsolutePath}";
+                    omsJson = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+                }
+                if (!string.IsNullOrWhiteSpace(omsJson))
+                    File.WriteAllText(omsPath, omsJson);
+                #endregion
+
+                #region 修改授权配置文件
+                using (FileStream reader = File.Open(identityPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                {
+                    int len = (int)reader.Length;
+                    byte[] bytes = new byte[len];
+                    reader.Read(bytes, 0, len);
+                    dynamic jsonObj = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(bytes));
+
+                    string identiyUrl = jsonObj["IdentityServer"].Clients[0].RedirectUris[0].Value;
+                    Uri tUrl = new Uri(identiyUrl);
+
+                    jsonObj["IdentityServer"].Clients[0].RedirectUris[0].Value = $"http://{ip}:{port}{tUrl.AbsolutePath}";
+                    identityJson = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+                }
+                if (!string.IsNullOrWhiteSpace(identityJson))
+                    File.WriteAllText(identityPath, identityJson);
+                #endregion
+
+                #region 修改网关配置文件
+                using (FileStream reader = File.Open(ocelotPath, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
+                {
+                    int len = (int)reader.Length;
+                    byte[] bytes = new byte[len];
+                    reader.Read(bytes, 0, len);
+                    dynamic jsonObj = JsonConvert.DeserializeObject(Encoding.UTF8.GetString(bytes));
+
+                    foreach (dynamic arr in jsonObj["Routes"])
+                    {
+                        arr.DownstreamHostAndPorts[0]["Host"] = ip;
+                        arr.DownstreamHostAndPorts[0]["Port"] = port;
+                    }
+                    gateWayJson = JsonConvert.SerializeObject(jsonObj, Formatting.Indented);
+                }
+                if (!string.IsNullOrWhiteSpace(gateWayJson))
+                    File.WriteAllText(ocelotPath, gateWayJson);
+                #endregion
+
+            }
+            catch (Exception)
+            {
+                showMessageWinDow("修改(oms/授权/网关)配置文件信息失败");
+            }
         }
 
         public void ReStartWeb()
         {
-            WebMainAdd webMainAdd = new WebMainAdd("");
-            webMainAdd.setConfiguration(ipAddress.Text, port.Text);
+            setConfiguration(ipAddress.Text, port.Text);
             var directoryStr = path.Content + gitPackages.Find(x => x.PackageName.Equals("Publish")).StoragePath;
             CreateSite(siteName.Text, ipAddress.Text, Convert.ToInt32(port.Text), directoryStr);
             List<ApplicationPool> poolCollection = manager.ApplicationPools.Where(s => s.Name.StartsWith(siteName.Text + "_")).ToList();

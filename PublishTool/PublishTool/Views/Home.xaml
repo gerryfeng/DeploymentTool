@@ -62,7 +62,7 @@
                                                     </Grid>
                                                 </Grid>
                                                 <Button Style="{StaticResource WButton_IconText}" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Transparent" CommandParameter="{Binding SiteName }"  Content="更新" Margin="25" Height="20" Click="update_Click" Name="update" />
-                                                <Button Style="{StaticResource WButton_IconText}"  Margin="130,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left"  Foreground="#b4c3e1" FontSize="12"  Content="{Binding Path}" Click="File_MouseDown"  />
+                                                <Button Style="{StaticResource WButton_IconText}"  Margin="130,0,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Left"  CommandParameter="{Binding Path }"  Foreground="#b4c3e1" FontSize="12"  Content="{Binding Path}" Click="File_MouseDown"  />
                                             </Grid>
                                         </StackPanel>
                                     </Border>

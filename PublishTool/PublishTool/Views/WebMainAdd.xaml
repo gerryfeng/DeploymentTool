@@ -122,7 +122,7 @@
                                     <StackPanel>
                                         <Border CornerRadius="3,3,0,0" BorderBrush="#60ffffff" BorderThickness="1,1,1,1" Background="Transparent" Height="30">
                                             <Grid>
-                                                <TextBox  Name="ipAddress" Text="127.0.0.1" IsEnabled="False"  FontSize="12" Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
+                                                <TextBox  Name="ipAddress" Text="127.0.0.1"   FontSize="12" Foreground="#60ffffff" VerticalAlignment="Center"  FontFamily="微软雅黑" Background="Transparent" BorderThickness="0" Margin="10,0,0,0"/>
                                             </Grid>
                                         </Border>
                                     </StackPanel>
