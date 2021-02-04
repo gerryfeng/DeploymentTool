@@ -550,9 +550,9 @@ namespace PublishTool.Views
             try
             {
 
-                //var git = new CommandRunner("git", initPath);
+                var git = new CommandRunner("git", initPath);
 
-                //string logs = git.Run(cloneUrl);
+                string logs = git.Run(cloneUrl);
 
                 //if (string.IsNullOrEmpty(logs)) 
                 //{
