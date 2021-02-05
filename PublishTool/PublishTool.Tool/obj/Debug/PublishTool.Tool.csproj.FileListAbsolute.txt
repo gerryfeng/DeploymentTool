@@ -1,6 +1,5 @@
 F:\平台部署工具\DeploymentTool\PublishTool\bin\PublishTool.Tool.dll
 F:\平台部署工具\DeploymentTool\PublishTool\bin\PublishTool.Tool.pdb
-F:\平台部署工具\DeploymentTool\PublishTool\PublishTool.Tool\obj\Debug\PublishTool.Tool.csprojAssemblyReference.cache
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool.Tool\obj\Debug\PublishTool.Tool.csproj.CoreCompileInputs.cache
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool.Tool\obj\Debug\PublishTool.Tool.csproj.CopyComplete
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool.Tool\obj\Debug\PublishTool.Tool.dll

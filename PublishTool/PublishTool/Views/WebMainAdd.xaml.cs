@@ -226,6 +226,7 @@ namespace PublishTool.Views
             //发布
             Publish();
             showMessageWinDow("添加成功");
+            lodingGrid.Visibility = Visibility.Hidden;
             Home home = new Home();
             NavigationService.GetNavigationService(this).Navigate(home);
 

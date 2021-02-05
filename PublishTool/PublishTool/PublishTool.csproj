@@ -285,9 +285,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="128.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\ICON\128.ico" />
     <Resource Include="Images\ICON\48.ico" />
     <Resource Include="Images\Nor\NorHeader.jpg" />
