@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\App.xaml
-331109189400
+331076397605
 10-75208305
-24-488287095
+2477518404
 20-1959056428
-Controls\LoadingWait.xaml;MainWindow.xaml;MiniWindow.xaml;Styles\Carousel\Carousel2DView.xaml;Styles\Carousel\ImageItem.xaml;Styles\DataGrid.xaml;Styles\DataGridForSong.xaml;Styles\Expander.xaml;Styles\FormControl.xaml;Styles\ItemControlTemp.xaml;Styles\ListBox.xaml;Styles\ListView.xaml;Styles\Login.xaml;Styles\Menu.xaml;Styles\NorTheme.xaml;Styles\RadioButton.xaml;Styles\ScrollView.xaml;Styles\SelectDate.xaml;Styles\Style.xaml;Styles\TabControl.xaml;Styles\TabControl_Home.xaml;Styles\TabControl_Friend.xaml;Styles\WButton.xaml;Styles\WSlider.xaml;Styles\WSSlider.xaml;UserLogin.xaml;Views\Home.xaml;Views\LodingWin.xaml;Views\MessageWindow.xaml;Views\MusicList.xaml;Views\WebAdd.xaml;Views\WebDetail.xaml;Views\WebMainAdd.xaml;
+Controls\LoadingWait.xaml;Controls\MessageWindow.xaml;MainWindow.xaml;MiniWindow.xaml;Styles\Carousel\Carousel2DView.xaml;Styles\Carousel\ImageItem.xaml;Styles\DataGrid.xaml;Styles\DataGridForSong.xaml;Styles\Expander.xaml;Styles\FormControl.xaml;Styles\ItemControlTemp.xaml;Styles\ListBox.xaml;Styles\ListView.xaml;Styles\Login.xaml;Styles\Menu.xaml;Styles\NorTheme.xaml;Styles\RadioButton.xaml;Styles\ScrollView.xaml;Styles\SelectDate.xaml;Styles\Style.xaml;Styles\TabControl.xaml;Styles\TabControl_Home.xaml;Styles\TabControl_Friend.xaml;Styles\WButton.xaml;Styles\WSlider.xaml;Styles\WSSlider.xaml;UserLogin.xaml;Views\Home.xaml;Views\LodingWin.xaml;Views\MusicList.xaml;Views\WebAdd.xaml;Views\WebDetail.xaml;Views\WebMainAdd.xaml;
 
 False
 

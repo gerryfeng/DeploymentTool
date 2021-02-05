@@ -22,6 +22,7 @@ namespace PublishTool.Views
     {
         private static ServerManager manager;
         List<Task> tasks = new List<Task>();
+        public bool showDio=false;
         public Home()
         {
             InitializeComponent();
@@ -65,11 +66,15 @@ namespace PublishTool.Views
 
         private void Accomplish()
         {
+
             //还可以进行其他的一些完任务完成之后的逻辑处理
             tasks.Clear();
-            showMessageWinDow("更新成功");
+            if (showDio)
+            {
+                showMessageWinDow("更新成功");
+                showDio = false;
+            }
             lodingGrid.Visibility = Visibility.Hidden;
-
         }
         public void showMessageWinDow(string Msg)
         {
@@ -92,6 +97,7 @@ namespace PublishTool.Views
         {
             Site site = FindSiteBySiteName(siteName);
             string add = GetPhysicalPathBySite(site);
+            showDio = true;
             tasks.Add(Task.Run(() => pull(add)));
             await Task.WhenAll(tasks);
             TaskCallBack();

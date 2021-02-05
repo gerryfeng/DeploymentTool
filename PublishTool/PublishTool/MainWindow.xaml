@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:PublishTool.Controls"
         xmlns:a="clr-namespace:PublishTool.Controls"
-        Title="无尽FM" Height="770" MinHeight="770" Width="1146" MinWidth="1146" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown"  StateChanged="Window_StateChanged" WindowStyle="None" BorderThickness="40" Icon="Images/ICON/48.ico" WindowStartupLocation="CenterScreen">
+        Title="集成部署工具" Height="770" MinHeight="770" Width="1146" MinWidth="1146" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" MouseLeftButtonDown="Window_MouseLeftButtonDown"  StateChanged="Window_StateChanged" WindowStyle="None" BorderThickness="40" Icon="Images/ICON/48.ico" WindowStartupLocation="CenterScreen">
     <Window.Effect>
         <DropShadowEffect BlurRadius="40" Opacity="0.4" ShadowDepth="0"/>
     </Window.Effect>
@@ -52,7 +52,7 @@
                             <Image Source="Images/NewIcon/Top.png" Width="54" Height="54" Clip="{StaticResource ResourceKey=UserInfoHeader}">
                             </Image>
                         </Border>
-                        <Label Content="项目部署工具" Foreground="White"   HorizontalAlignment="Center"  FontSize="16px" Margin="55,16,0,0" FontWeight="Bold"  />
+                        <Label Content="集成部署工具" Foreground="White"   HorizontalAlignment="Center"  FontSize="16px" Margin="55,16,0,0" FontWeight="Bold"  />
                     </Grid>
                 </StackPanel>
             </Grid>

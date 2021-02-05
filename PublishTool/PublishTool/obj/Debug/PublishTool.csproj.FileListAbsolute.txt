@@ -113,6 +113,6 @@ F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\Lod
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\LodingWin.baml
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\WebMainAdd.g.cs
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\WebMainAdd.baml
-F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\MessageWindow.g.cs
-F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Views\MessageWindow.baml
 F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\PublishTool_Content.g.cs
+F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Controls\MessageWindow.g.cs
+F:\平台部署工具\DeploymentTool\PublishTool\PublishTool\obj\Debug\Controls\MessageWindow.baml

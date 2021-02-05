@@ -34,7 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>128.ico</ApplicationIcon>
+    <ApplicationIcon>Images\ICON\128.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="3DTools, Version=1.0.2614.20437, Culture=neutral, processorArchitecture=MSIL">
@@ -80,6 +80,9 @@
     <Compile Include="Controls\LoadingWait.xaml.cs">
       <DependentUpon>LoadingWait.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MessageWindow.xaml.cs">
+      <DependentUpon>MessageWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MiniWindow.xaml.cs">
       <DependentUpon>MiniWindow.xaml</DependentUpon>
     </Compile>
@@ -100,9 +103,6 @@
     <Compile Include="Views\LodingWin.xaml.cs">
       <DependentUpon>LodingWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MessageWindow.xaml.cs">
-      <DependentUpon>MessageWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\MusicList.xaml.cs">
       <DependentUpon>MusicList.xaml</DependentUpon>
     </Compile>
@@ -118,6 +118,10 @@
     <Page Include="Controls\LoadingWait.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MessageWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -232,10 +236,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LodingWin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MessageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
